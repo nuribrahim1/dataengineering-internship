@@ -59,8 +59,12 @@ For both datasets, all of the timestamps were converted into UTC times. For the 
 ## Loading
 
 The transformed data was loaded into a Google Cloud Storage Bucket as a CSV file. Each of the datasets were loaded to separate files in chunks of 50000 rows.
-They were saved as:
-gs://week_1_bucke/clickstream/ingest_date==YYYY-MM-DD/clickstreampartX.csv
+They were saved as: <br>  
+gs://week_1_bucke/clickstream/ingest_date==YYYY-MM-DD/clickstreampartX.csv <br>  
 gs://week_1_bucke/transactions/ingest_date=YYYY-MM-DD/transactionspartX.csv
 
 
+## Alerts and logs
+
+Alerts and logs were made using logging.error() for alerts and logging.info() for logs. <br>  
+The script would log messages for each chunk that is loaded into the bucket and there would be an error message is the API did not load.
